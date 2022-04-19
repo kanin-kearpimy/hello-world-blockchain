@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect, useCallback } from 'react'
-
+import Card from './components/Card/Card'
 
 
 function App() {
@@ -39,24 +39,17 @@ function App() {
         </label>
         <button disabled={isSend} onClick={() => createBlock(input_data)}>Add Block</button>
       </div>
-      <table border='1'>
-        <thead>
-          <tr>
-            <th>Hash</th>
-            <th>Data</th>
-            <th>Previous Hash</th>
-          </tr>
-        </thead>
-        <tbody>
-          {blocks.map(block => {
-            return <tr key={block.hash}>
-              <td >{block.hash}</td>
-              <td >{block.data}</td>
-              <td >{block.previousHash}</td>
-            </tr>
-          })}
-        </tbody>
-      </table>
+      <div style={{display: 'flex'}}>
+        {blocks.map(block => {
+          return (
+            <Card 
+              hash={block.hash}
+              data={block.data}
+              previousHash={block.previousHash}
+            />
+          )
+        })}
+      </div>
     </div>
   );
 }

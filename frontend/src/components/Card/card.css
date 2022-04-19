@@ -1,0 +1,19 @@
+.card {
+    width: 300px;
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid black;
+}
+
+.card div {
+    width: 100%;
+    white-space: normal;
+    height: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.card div p{
+    word-break: break-all;
+}
